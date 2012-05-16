@@ -1,0 +1,36 @@
+/* CSS declarations go here */
+body {
+  font-family: 'Helvetica Neue',Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+#container {
+  margin-top: 50px;
+}
+.player {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.75em;
+  margin: 5px 0;
+}
+.player .score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #777;
+}
+.player.selected {
+  background-color: yellow;
+}
+
+.player.selected .score {
+  color: black;
+}
+
+.details, .none {
+  font-weight: bold;
+  font-size: 2em;
+  border-style: dashed none none none;
+  border-color: #ccc;
+  border-width: 4px;
+  margin: 50px 10px;
+  padding: 10px 0px;
+}

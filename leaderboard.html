@@ -1,0 +1,43 @@
+<head>
+  <title>leaderboard</title>
+  <meta name = "viewport" content = "width = device-width">
+  <meta name = "viewport" content = "initial-scale = 1.0">
+</head>
+
+<body>
+  <div class="row">
+    <div id="container" class="span6 offset3">
+        {{> leaderboard}}
+    </div>
+  </div>
+</body>
+
+<template name="leaderboard">
+  <div id="players">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+    <form id="new_player" class="well form-inline">
+      <input type="text" id="new_player_name" placeholder="Scientist Name">
+      <button type="submit" class="btn">Add</button>
+    </form>
+  </div>
+  {{#if selected_name}}
+    <div class="details">
+      {{selected_name}}
+      <button class="btn inc">Give 5 Points</button>
+    </div>
+  {{/if}}
+  {{#unless selected_name}}
+    <div class="none">
+      Click a player to select
+    </div>
+  {{/unless}}
+</template>
+
+<template name="player">
+  <div class="player {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="pull-right score">{{score}}</span>
+  </div>
+</template>
